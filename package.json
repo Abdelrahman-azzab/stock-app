@@ -1,0 +1,32 @@
+{
+  "name": "stock-management-app",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "14.0.4",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "firebase": "^10.7.1",
+    "next-i18next": "^15.2.0",
+    "react-i18next": "^13.5.0",
+    "i18next": "^23.7.6",
+    "@heroicons/react": "^2.0.18",
+    "tailwindcss": "^3.3.6",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32"
+  },
+  "devDependencies": {
+    "@types/node": "20.10.4",
+    "@types/react": "18.2.42",
+    "@types/react-dom": "18.2.17",
+    "eslint": "8.55.0",
+    "eslint-config-next": "14.0.4",
+    "typescript": "5.3.3"
+  }
+}
