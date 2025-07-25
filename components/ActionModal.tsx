@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from '../lib/i18n';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import { StockItem } from '../lib/stockService';
 
@@ -18,7 +18,7 @@ const ActionModal: React.FC<ActionModalProps> = ({
   item,
   type
 }) => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
   const [amount, setAmount] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');

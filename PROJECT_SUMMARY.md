@@ -51,7 +51,7 @@ You now have a fully functional, modern stock management application that meets 
 - **Database**: Firebase Firestore
 - **Icons**: Heroicons
 - **Internationalization**: next-i18next
-- **Deployment**: Ready for Vercel (recommended) or Firebase Hosting
+- **Deployment**: Configured for Firebase Hosting with static export
 
 ## 📁 Project Structure
 
@@ -100,11 +100,13 @@ npm run dev
 ```
 Access at http://localhost:3000
 
-### 3. Deployment to Vercel
-1. Push code to GitHub/GitLab/Bitbucket
-2. Connect repository to Vercel
-3. Add Firebase environment variables in Vercel dashboard
-4. Deploy automatically
+### 3. Deployment to Firebase
+1. Install Firebase CLI: `npm install -g firebase-tools`
+2. Login to Firebase: `firebase login`
+3. Initialize hosting: `firebase init hosting`
+4. Build and deploy: `npm run deploy`
+
+**Detailed instructions**: See `FIREBASE_DEPLOYMENT.md` for complete step-by-step guide
 
 ## 🎯 Key Operations
 
@@ -190,6 +192,6 @@ The application perfectly meets all your requirements:
 - ✅ Bilingual support (English/Arabic)
 - ✅ Dark/Light mode themes
 - ✅ Centered, modern UI design
-- ✅ Vercel deployment ready
+- ✅ Firebase Hosting deployment ready
 
 Start managing your Rozleaf inventory efficiently!

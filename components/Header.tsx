@@ -1,6 +1,5 @@
 import React from 'react';
-import { useTranslation } from 'next-i18next';
-import { useRouter } from 'next/router';
+import { useTranslation } from '../lib/i18n';
 import { 
   SunIcon, 
   MoonIcon, 
@@ -23,13 +22,11 @@ const Header: React.FC<HeaderProps> = ({
   lastSync,
   isLoading
 }) => {
-  const { t } = useTranslation('common');
-  const router = useRouter();
-  const { locale } = router;
+  const { t, locale, changeLanguage } = useTranslation();
 
   const toggleLanguage = () => {
     const newLocale = locale === 'en' ? 'ar' : 'en';
-    router.push(router.pathname, router.asPath, { locale: newLocale });
+    changeLanguage(newLocale);
   };
 
   const formatLastSync = (date: Date | null) => {

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { useTranslation } from 'next-i18next';
-import { useRouter } from 'next/router';
+import { useTranslation } from '../lib/i18n';
 import { 
   MinusIcon, 
   PlusIcon, 
@@ -24,9 +23,7 @@ const StockTable: React.FC<StockTableProps> = ({
   onAdd,
   onEdit
 }) => {
-  const { t } = useTranslation('common');
-  const router = useRouter();
-  const { locale } = router;
+  const { t, locale } = useTranslation();
   
   const [modalOpen, setModalOpen] = useState(false);
   const [modalType, setModalType] = useState<ModalType>(null);

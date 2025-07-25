@@ -1,9 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { GetStaticProps } from 'next';
-import { useTranslation } from 'next-i18next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { useRouter } from 'next/router';
+import React, { useState } from 'react';
 import Head from 'next/head';
+import { useTranslation } from '../lib/i18n';
 import { useTheme } from '../hooks/useTheme';
 import { useStock } from '../hooks/useStock';
 import Header from '../components/Header';
@@ -11,9 +8,7 @@ import StatsCards from '../components/StatsCards';
 import StockTable from '../components/StockTable';
 
 export default function Home() {
-  const { t } = useTranslation('common');
-  const router = useRouter();
-  const { locale } = router;
+  const { t } = useTranslation();
   const { isDark, toggleTheme } = useTheme();
   const {
     stockItems,
@@ -32,11 +27,7 @@ export default function Home() {
     message: string;
   } | null>(null);
 
-  // Set HTML direction based on locale
-  useEffect(() => {
-    document.documentElement.dir = locale === 'ar' ? 'rtl' : 'ltr';
-    document.documentElement.lang = locale || 'en';
-  }, [locale]);
+
 
   // Show notifications
   const showNotification = (type: 'success' | 'error', message: string) => {
@@ -145,10 +136,3 @@ export default function Home() {
   );
 }
 
-export const getStaticProps: GetStaticProps = async ({ locale }) => {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale || 'en', ['common'])),
-    },
-  };
-};

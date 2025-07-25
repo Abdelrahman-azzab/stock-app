@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from '../lib/i18n';
 import { 
   CubeIcon, 
   ExclamationTriangleIcon, 
@@ -17,7 +17,7 @@ const StatsCards: React.FC<StatsCardsProps> = ({
   lowStockCount,
   totalProducts
 }) => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
 
   const stats = [
     {
